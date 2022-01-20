@@ -30,3 +30,11 @@ numpy==1.19.5
 pandas==1.1.5
 pandarallel==1.5.2
 
+celery==4.4.7
+xlrd==2.0.1
+django-redis==5.1.0
+Pillow==8.4.0
+django-rest-captcha==0.2.0
+paramiko<2.8
+pyOpenSSL==20.0.1]
+
