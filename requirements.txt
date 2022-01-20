@@ -1,0 +1,32 @@
+# 已包含在 Dockerfile 中
+## 基础框架部署层
+lxml==4.6.3
+bcrypt==3.2.0
+cryptography==3.2.1
+pynacl==1.4.0
+gmssl==3.2.1
+rsa==4.7.2
+gunicorn==19.10.0
+simplejson==3.17.2
+Django==2.2.20
+djangorestframework==3.12.2
+python-dateutil==2.7.5
+redis==3.5.3
+python-dotenv==0.17.1
+concurrent-log-handler==0.9.19
+django-cors-headers==3.7.0
+requests==2.25.1
+
+## 持久化框架部署层
+django-filter==2.4
+drf-flex-fields==0.8.9
+sonyflake-py==1.1
+psycopg2-binary==2.8.5
+cx_Oracle==8.1.0
+sqlalchemy==1.4.7
+
+## 数据类应用部署层
+numpy==1.19.5
+pandas==1.1.5
+pandarallel==1.5.2
+
