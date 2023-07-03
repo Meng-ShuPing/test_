@@ -1,0 +1,23 @@
+jwt_sso_permission_handler = cast(Callable[[list[str]], list[int]],
+                                  dry_import_module_func(settings.JWT_SSO_PERMISSION_HANDLER))
+jwt_sso_permission_map_handler = cast(Callable[[list[int]], list[str]],
+                                      dry_import_module_func(settings.JWT_SSO_PERMISSION_MAP_HANDLER))
+
+JWT_SSO_PERMISSION_HANDLER = 'sdj_dwh_api.permissions.jwt_permission_handler'
+JWT_SSO_PERMISSION_MAP_HANDLER = 'sdj_dwh_api.permissions.jwt_permission_map_handler'
+
+def jwt_permission_handler(permissions: list[str]) -> list[int]:
+    """将 SSO 的配置权限进行枚举转换，从 str 到 int"""
+    pass
+
+
+def jwt_permission_map_handler(permissions: list[int]) -> list[str]:
+    """将 SSO 的配置权限进行枚举转换，从 int 到 str"""
+    pass
+
+def dry_import_module_func(module_func_name: str) -> Any:
+    """动态导入设置中配置的函数"""
+    module_name = '.'.join(module_func_name.split('.')[:-1])
+    func_name = module_func_name.split('.')[-1]
+    mdl = importlib.import_module(module_name)
+    return getattr(mdl, func_name)
